@@ -1,4 +1,4 @@
-imageFile = "128_128.jpg";
+imageFile = "8_8.png";
 bitFreq = 100; %bits/sec
 
 [bits, dim] = encode(imageFile);
