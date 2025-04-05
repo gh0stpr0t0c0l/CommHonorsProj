@@ -1,0 +1,11 @@
+function originalImage = decoding(recievedBits, imageDim)
+recievedBits = reshape(recievedBits, [8,length(recievedBits)/8]);
+recievedBits2 = zeros(1,size(recievedBits,2));
+for i = 1:size(recievedBits,2)
+    recievedBits2(i) = bin2dec(char(transpose(recievedBits(:,i))+'0'))
+end
+originalImage(1) = reshape(recievedBits2(1:(imageDim^2)),[imageDim,imageDim])
+imagesc(originalImage)
+end
+
+image = decoding(bits(17:end), dim);
