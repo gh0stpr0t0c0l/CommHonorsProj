@@ -1,4 +1,4 @@
-function stringOfBits = encoding(fileName)
+function [stringOfBits, imageDim] = encoding(fileName)
 
 image = imread(fileName);
 image = double(image);
@@ -20,6 +20,7 @@ for color = 1:3
 end
 
 stringOfBits = bitString;
+imageDim = size(image, 1);
 end
 
-answer = encoding("8_8.png");
+[bits, dim] = encoding("8_8.png");

@@ -1,0 +1,25 @@
+function originalImage = decoding(recievedBits)
+recievedBits = reshape(recievedBits, [8,length(recievedBits)/8])
+%image = imread(recievedBits);
+%image = double(image);
+
+%bitString = [1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0];
+
+for color = 1:3
+    for i = 1:size(image, 1)
+        for j = 1:size(image, 1)
+
+            
+            image(i,j,color) = bin2dec(recievedBits(), 8)
+            bitString = [bitString, (dec2bin(image(i, j, color), 8) - '0')];
+            
+
+
+        end
+    end
+end
+
+originalImage = bitString;
+end
+
+answer = decoding(answer);
