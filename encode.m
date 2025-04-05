@@ -1,6 +1,8 @@
-function [stringOfBits, imageDim] = encoding(fileName)
+function [stringOfBits, imageDim] = encode(fileName)
 
 image = imread(fileName);
+figure
+imagesc(image)
 image = double(image);
 
 bitString = [1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0];
@@ -22,5 +24,3 @@ end
 stringOfBits = bitString;
 imageDim = size(image, 1);
 end
-
-[bits, dim] = encoding("chicken_hi_res.jpg");

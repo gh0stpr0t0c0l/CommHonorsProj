@@ -1,14 +1,13 @@
-function originalImage = decoding(recievedBits, imageDim)
-recievedBits = reshape(recievedBits, [8,length(recievedBits)/8]);
-recievedBits2 = zeros(1,size(recievedBits,2));
-for i = 1:size(recievedBits,2)
-    recievedBits2(i) = bin2dec(char(transpose(recievedBits(:,i))+'0'));
+function originalImage = decode(receivedBits, imageDim)
+receivedBits = reshape(receivedBits, [8,length(receivedBits)/8]);
+receivedBits2 = zeros(1,size(receivedBits,2));
+for i = 1:size(receivedBits,2)
+    receivedBits2(i) = bin2dec(char(transpose(receivedBits(:,i))+'0'));
 end
-originalImage(:,:,1) = reshape(recievedBits2(1:(imageDim^2)),[imageDim,imageDim]);
-originalImage(:,:,2) = reshape(recievedBits2((imageDim^2+1):(2*(imageDim^2))),[imageDim,imageDim]);
-originalImage(:,:,3) = reshape(recievedBits2((2*(imageDim^2)+1):(3*(imageDim^2))),[imageDim,imageDim]);
+originalImage(:,:,1) = reshape(receivedBits2(1:(imageDim^2)),[imageDim,imageDim]);
+originalImage(:,:,2) = reshape(receivedBits2((imageDim^2+1):(2*(imageDim^2))),[imageDim,imageDim]);
+originalImage(:,:,3) = reshape(receivedBits2((2*(imageDim^2)+1):(3*(imageDim^2))),[imageDim,imageDim]);
 originalImage = originalImage/255;
+figure
 imagesc(originalImage)
 end
-
-image2 = decoding(bits(17:end), dim);
