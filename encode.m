@@ -6,8 +6,8 @@ image = double(image);
 bitString = [1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0];
 
 for color = 1:3
-    for i = 1:size(image, 1)
-        for j = 1:size(image, 1)
+    for j = 1:size(image, 1)
+        for i = 1:size(image, 1)
 
             
            
@@ -23,4 +23,4 @@ stringOfBits = bitString;
 imageDim = size(image, 1);
 end
 
-[bits, dim] = encoding("8_8.png");
+[bits, dim] = encoding("chicken_hi_res.jpg");
