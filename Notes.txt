@@ -1,0 +1,4 @@
+Notes:
+We don't know how to take an integral over a time interval (clocked?)
+We think we're sending a clock, but it's pulses of pulses
+
