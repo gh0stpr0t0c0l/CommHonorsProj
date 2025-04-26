@@ -15,15 +15,15 @@ y = [1 0 0 1 1 0 0 1;
     0 0 0 1 1 0 0 0;
     0 0 0 1 1 0 0 0;
     0 0 0 1 1 0 0 0;
-    1 0 0 1 1 0 0 1;];
+    1 0 0 1 1 0 0 1];
 
 newSignal = reshape(y, [1 64]);
 
-newSignal = cat(2, [1 0 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0], newSignal);
+newSignal = cat(2, [1 0 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0], newSignal , [0 0]);
 %x = zeros([10000,1]);
 %for i=1:length(x)
  %   x(i) = mod(i,2);
 %end
 
-y = 0:1:83;
+y = 0:1/5:85/5;
 signal = [y',newSignal'];
