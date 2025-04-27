@@ -21,7 +21,7 @@ z = imread('rick20.png');
 z = z(:,:,1);
 z = z > 128;
 imagesc(z)
-newSignal = reshape(z, [1 400]);
+newSignal = reshape(y, [1 64]);
 
 newSignal = cat(2, [1 0 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0], newSignal , [0 0]);
 %x = zeros([10000,1]);
@@ -29,5 +29,5 @@ newSignal = cat(2, [1 0 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0], newSignal , [0 0])
  %   x(i) = mod(i,2);
 %end
 
-y = 0:1/2:421/2;
+y = 0:1/2:85/2;
 signal = [y',newSignal'];
