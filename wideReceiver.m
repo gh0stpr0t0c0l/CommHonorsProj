@@ -1,5 +1,3 @@
-clc
-
 rawData = out.signalOut(1,1,:); % set to raw recieved bits
 rawData = reshape(rawData(1, 1, :), 1, length(rawData(1, 1, :)));
 binary = true;
