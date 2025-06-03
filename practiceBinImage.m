@@ -25,5 +25,5 @@ newSignal = cat(2, [1 0 1 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0], newSignal , [0 0])
  %   x(i) = mod(i,2);
 %end
 
-y = 0:1/5:85/5;
+y = 0:1:85;
 signal = [y',newSignal'];
